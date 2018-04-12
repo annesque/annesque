@@ -1,3 +1,6 @@
 
 *~
 *.trash
+trash
+node_modules
+legacy
