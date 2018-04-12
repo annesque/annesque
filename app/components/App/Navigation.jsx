@@ -1,6 +1,7 @@
 import React           from 'react'
 import PropTypes       from 'prop-types'
 import scrollToElement from 'scroll-to-element'
+import { Parallax, Background } from 'react-parallax'
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -98,15 +99,15 @@ class Navigation extends React.Component {
             <p>Use this form for inquiries or to schedule a private class.</p>
 					  <form method="post" action="#" id="contact" >
 						  <div className="field">
-							  <label for="name">Name</label>
+							  <label htmlFor="name">Name</label>
 							  <input type="text" name="name" id="name" />
 						  </div>
 						  <div className="field">
-							  <label for="email">Email</label>
+							  <label htmlFor="email">Email</label>
 							  <input type="text" name="email" id="email" />
 						  </div>
 						  <div className="field">
-							  <label for="message">Message</label>
+							  <label htmlFor="message">Message</label>
 							  <textarea name="message" id="message" rows="3"></textarea>
 						  </div>
 						  <ul className="actions">
@@ -153,8 +154,8 @@ class Navigation extends React.Component {
         
         { this.props.children }
         <button className={`scroltop fa fa-chevron-up`} style={{ display: this.state.showScrollTop === 'showScrollTop' ? 'block' : 'none' }} onClick={() => this.scrollTop() }></button>
-      </div>
-         
+      
+        </div>
     )
   }
 }
