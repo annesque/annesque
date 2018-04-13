@@ -148,6 +148,9 @@
       margin: 1rem;
       padding: 1rem;
       }
+      .images img {
+        max-width: 100%;
+      }
       .thumbs > * {
       display: inline;
       }
@@ -164,7 +167,7 @@
       </ul>
       <div class="images row">
         {{for photos}}
-        <div class="6u">
+        <div class="6u 12u$(small)">
           <div class="dropShadow"><img src="{{:small_url}}" alt='' /></div>
         </div>
         {{/for}}
