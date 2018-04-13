@@ -32,10 +32,9 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul class="links">
-					<li class="active"><a href="index.html">News</a></li>
+					<li><a href="index.html">News</a></li>
 					<li><a href="schedule.html">Map&nbsp;&&nbsp;Schedule</a></li>
-					<li><a href="curriculum.html">Curriculum</a></li>
-					<!-- <li><a href="online-learning.html">Online&nbsp;Learning</a></li> -->
+					<li class="active"><a href="curriculum.html">Curriculum</a></li>
 				</ul>
 				<ul class="icons">
 					<li><a href="https://www.youtube.com/channel/UCQeMfLo7mgEOvqLsDXcp1ag" class="icon fa-youtube"><span class="label">Youtube</span></a></li>
@@ -50,27 +49,9 @@
 				<!-- Featured Post -->
 				<article class="post featured">
 					<header class="major">
-						<h2>Advanced Salsa Workshop</h2>
-            <p>Want to up your salsa game? Now’s your chance! Join us for an Advanced Salsa Workshop led by Beni, and impress your next dance partner with a graceful dip, snappy turn, and elegant flourish! We are committed to helping nurture the vibrant salsa community here in Santa Cruz County by organizing workshops where you can polish your skills and elevate your technique. You love dancing, and so do we!</p>
-            <p>This workshop is intended for dancers of an intermediate level, and instruction will be tailored to your level of comfort and skill. Our flexible routines can be adjusted to your personal style. This time around, we will pay some special attention to dips: learn how to make this move beautiful and exciting, while maintaining safety and comfort for both partners!</p>
-
+						<h2>Curriculum</h2>
 					</header>
-          <!-- <img style="width: 50%; margin: auto" src="archive/20180304/profile.jpg" alt='' /> -->
-				</article>
-
-        <!-- One Video -->
-        <article class="post featured tmp-2">
-          <header class="major">
-            <span class="date">March 3rd, 2018</span>
-            <h2>Salsa Class Summary:<br />
-              dips and finishes</h2>
-            <p>Intermediate lesson covering how to dip the follower for that excellent finish to a song!</p>
-          </header>
-          <div class="video-wrapper">
-            <iframe width="560" height="349" frameborder="0" allowfullscreen
-                    src="https://www.youtube.com/embed/npKh6UTfsw8">
-            </iframe> 
-          </div>
+          <div id="curriculumContainer"></div>
         </article>
 
 			</div>
@@ -103,7 +84,6 @@
 							<li><a class="button" href="index.html">News</a></li>
 							<li><a class="button" href="schedule.html">Map & Schedule</a></li>
 							<li><a class="button" href="curriculum.html">Curriculum</a></li>
-							<!-- <li><a class="button" href="online-learning.html">Online&nbsp;Learning</a></li> -->
 						</ul>
 					</section>
 					<section>
@@ -152,7 +132,44 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <style>
+      .thumbs {
+      text-align: left;
+      }
+      .images {
+      }
+      .images > div > div {
+      border: 1px solid white;
+      min-height: 400px;
+      margin: 1rem;
+      padding: 1rem;
+      }
+      .thumbs > * {
+      display: inline;
+      }
+      .dropShadow {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    </style>
+    <script id="curriculumTemplate" type="text/x-jsrender">
+      <p>{{:description}}</p>
+      <ul class="thumbs">
+        {{for photos}}
+        <li class=""><img src="{{:thumb_url}}" alt='' /></li>
+        {{/for}}
+      </ul>
+      <div class="images row">
+        {{for photos}}
+        <div class="6u">
+          <div class="dropShadow"><img src="{{:small_url}}" alt='' /></div>
+        </div>
+        {{/for}}
+      </div>
+    </script>
 
 	</body>
 </html>
